@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Heading from "./Components/Heading";
 import Logo from "./Components/Logo";
 import ReactLogo from "./assets/react.svg";
 import Button from "./Components/Button";
 import Select from "./Components/Select";
+import FeatchAPI from "./Components/FeatchAPI";
 
 function App() {
   const handleAlert = () => {
@@ -51,6 +52,20 @@ function App() {
   country : "India"
  })
 
+const [text,setText] = useState("")
+
+useEffect(() => {
+  console.log("component is loading");
+  // alert("component loading") 
+
+  return () => {
+    console.log("compount unmounting");
+    
+  }
+
+},[count]);
+
+
   return (
     <>
     {address.state} <br />
@@ -63,6 +78,12 @@ function App() {
       <button onClick={() => setCount(0)}>Reset</button>
       <button onClick={Sub}>Sub</button>
 
+      <input 
+      type="text" 
+      value={text}
+      onChange={(e) => setText(e.target.value)}
+       />
+
       {name}
 
       <Button text="click me" className="btn" handleClick={handleAlert} />
@@ -70,8 +91,9 @@ function App() {
       <Heading heading_text="React.js" name="Abinand.np" age={25} />
       <Logo url="favicon.svg" />
       <Logo url={ReactLogo} />
-
       <Select label="Select City" options={options} />
+
+      <FeatchAPI />
     </>
   );
 }
