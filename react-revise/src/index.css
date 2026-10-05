@@ -14,3 +14,52 @@
   color: black;     
   border-radius: 4px;
 }
+
+.home {
+  width: 100%;
+  height: 100vh;
+  background-color: red;
+}
+.blogList {
+  width: 100%;
+   height: 100vh; 
+  background-color: yellow;
+}
+.addblog {
+  width: 100%;
+  height: 100vh;
+  
+  background-color: green;
+}
+
+.favorates {
+  width: 100%;
+  height: 100vh;
+  background-color: aqua;
+}
+.nav-condainer{
+  display: flex;
+  flex-direction: row;
+  background-color: gray;
+  height: 40px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.navemenu{
+  width: 200px;
+  display: flex;
+  align-items: center;
+  color: black;
+  font-weight: bold;
+}
+
+a{
+  text-decoration: none;
+}
+
+.active {
+  color: lightcoral;
+}
